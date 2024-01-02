@@ -1,0 +1,30 @@
+POST https://{{$dotenv AZURE_COGSRCH_SERVICE_NAME}}.search.windows.net/indexes/{{$dotenv AZURE_COGSRCH_INDEX_NAME}}/docs/index?api-version=2023-07-01-Preview
+Content-Type: application/json
+api-key: {{$dotenv AZURE_COGSRCH_ADMIN_KEY}}
+
+{
+  "value": [
+    {
+      "@search.action": "mergeOrUpload",
+      "id": "1",
+      "title": "Azure App Service",
+      "content": "Azure App Serviceは、ウェブアプリケーションの構築、デプロイ、スケーリングを行うための完全に管理されたプラットフォームです。ウェブアプリ、モバイルアプリのバックエンド、RESTful APIなどをホストすることができます。.NET、Java、Node.js、Python、PHPなど、さまざまなプログラミング言語やフレームワークをサポートしています。このサービスには、組み込みの自動スケーリングと負荷分散の機能も備わっています。また、Azure DevOps、GitHub、Bitbucketなど、他のAzureサービスとの統合も提供しています。",
+      "contentVector": []
+    },
+    {
+      "@search.action": "mergeOrUpload",
+      "id": "2",
+      "title": "Azure Functions",
+      "content": "Azure Functionsは、インフラストラクチャの管理をせずにコードを必要に応じて実行できるサーバーレスコンピュートサービスです。ワークロードに応じて自動的にスケールするイベント駆動型のアプリケーションを構築し、デプロイすることができます。Functionsは、C＃、F＃、Node.js、Python、およびJavaを含むさまざまな言語をサポートしています。他のAzureサービスや外部のサービスと統合するためのトリガーやバインディングも提供しています。消費するコンピュート時間のみを料金として支払います。",
+      "contentVector": []
+    },
+    {
+      "@search.action": "mergeOrUpload",
+      "id": "3",
+      "title": "Azure Cognitive Services",
+      "content": "Azure Cognitive Servicesは、わずか数行のコードで強力なアルゴリズムを使用して知的なアプリケーションを構築することができるAIサービスのセットです。これらのサービスは、ビジョン、音声、言語、知識、検索などの幅広い機能をカバーしています。これらは使いやすく、アプリケーションに統合しやすく設計されています。Cognitive Servicesは、Microsoftによって完全に管理され、スケーラブルであり、常に改善されています。それは、機械学習の深い専門知識なしで開発者がAIを搭載したソリューションを作成することを可能にします。",
+      "contentVector": []
+    }
+  ]
+}
+

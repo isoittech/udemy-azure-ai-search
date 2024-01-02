@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%- include("./_shared/stylesheets.ejs")  %>
+  <link href="/public/css/home.css" rel="stylesheet">
+  <title>Internal ChatGPT</title>
+</head>
+<body>
+  <div class="d-flex h-100">
+    <nav class="p-3 bg-light" style="min-width: 280px;">
+      <a href="/" class="text-decoration-none text-dark text-center d-block">
+        <span class="fs-1"><i class="fas fa-hat-wizard"></i> GPT +@</span>
+      </a>
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item mb-3">
+          <a class="btn <%= locals.view === 'chat' ? 'btn-outline-primary' : 'btn-light' %> w-100" href="/">+ Cognitive Search</a>
+        </li>
+      </ul>
+    </nav>
+    <main class="flex-grow-1 bg-highlight">
+      <div class="d-flex flex-column h-100">
+        <div class="flex-grow-1 p-3 chat-history" id="divChatHistory">
+        </div>
+        <div class="flex-shrink-0 p-3 chat-input bg-white">
+          <div class="row align-self-end">
+            <form method="POST" action="#" id="frmSendMessage">
+              <div class="d-flex">
+                <input type="hidden" id="txtTopicId" name="txtTopicId" value="">
+                <div class="flex-fill mr-3">
+                  <textarea class="form-control" rows="3" id="txtMessage" name="txtMessage"></textarea>
+                </div>
+                <div class="align-self-end ms-3">
+                  <button class="btn btn-outline-primary" type="submit" id="btnSend">送信 <i class="fas fa-paper-plane"></i></button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+<%- include("./_shared/scripts.ejs")  %>
+  <script src="/public/js/home.js"></script>
+</body>
+</html>

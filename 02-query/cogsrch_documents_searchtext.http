@@ -1,0 +1,8 @@
+POST https://{{$dotenv AZURE_COGSRCH_SERVICE_NAME}}.search.windows.net/indexes/{{$dotenv AZURE_COGSRCH_INDEX_NAME}}/docs/search?api-version=2023-07-01-Preview&search=*
+Content-Type: application/json
+api-key: {{$dotenv AZURE_COGSRCH_ADMIN_KEY}}
+
+{
+  "search": "*",
+  "select": "id,title"
+}
